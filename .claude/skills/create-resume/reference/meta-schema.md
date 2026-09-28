@@ -34,7 +34,7 @@ schema never forces information to be dropped or bent to fit.
 | `experience[].organization/title/location` | string | `title` is the **current or final** title. Never altered on output. |
 | `experience[].title_history[]` | `{title, start, end}` | Earlier titles at the same company; source for "Promoted from X to Y". |
 | `experience[].start/end` | `YYYY-MM` / `present` | |
-| `experience[].employment_type` | string | full-time, contract, internship… |
+| `experience[].employment_type` | string | full-time, contract, internship… `internship` triggers the internship rule (`ats-rules.md` §4). |
 | `experience[].team` | string | Team size, scope, reporting line. |
 | `experience[].tech[]` | string | Everything used in this role. Evidence for skills. |
 | `experience[].company_context` | `{what, product, stage, size, domain}` | What the company and product do. Feeds summaries and domain matching. |

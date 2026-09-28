@@ -105,6 +105,27 @@ page** (see §5, the Summary rule). It only gets space that is left over once
 every piece of real content is at full length. It never displaces, shortens
 or removes a bullet, a skill, a project or a role.
 
+### Internships (global rule)
+
+An internship is any `experience[]` entry with `employment_type: internship`.
+Years of experience below means **full-time professional experience**, not
+counting internships.
+
+- **Under 3 years of experience:** internships are full entries, treated like
+  any other role. They're often the strongest evidence a new grad has.
+- **3 years or more:** include an internship only if **both** hold:
+  1. the target role is relevant to that internship's work (e.g. a React
+     internship for a frontend or full-stack role), and
+  2. there's room once all full-time content is at full length.
+
+  Otherwise leave it out, and note it in report.md. That's safe: a resume
+  needn't list every job, and background checks verify the roles you
+  declare. Keep internships on LinkedIn regardless.
+
+**Content priority when fitting a page:** full-time content, then relevant
+internships (3+ years only), then the summary. An internship can displace the
+summary but never a full-time bullet.
+
 ### Bullets
 
 Per recent role, 4–6 bullets; older roles 2–3; roles older than about 8 years
@@ -129,12 +150,15 @@ summary.
 The loop runs in this order:
 
 1. **Remove the summary** if the build is over the limit.
-2. **Trim to fit without the summary.** Remove or shorten the
-   lowest-relevance content (oldest roles first), rebuilding after each
-   change. Never remove the only evidence for a must-have keyword; shorten
+2. **Trim to fit without the summary.** With 3+ years of experience, remove
+   internships first (see Internships in §4). Then remove or shorten the
+   lowest-relevance full-time content (oldest roles first), rebuilding after
+   each change. Never remove the only evidence for a must-have keyword; shorten
    that bullet instead. Record every trim, with its original text.
 3. **Restore trimmed content** once it fits. Put each trimmed item back at
-   full length, most relevant first, keeping each one that still fits. Only
+   full length, most relevant first, keeping each one that still fits.
+   Full-time content comes before relevant internships, and irrelevant
+   internships aren't restored. Only
    the trims that truly can't fit stay out.
 4. **Add the summary last**, and only if it fits alongside everything from
    step 3 without changing any of it. If it overflows, remove it again and

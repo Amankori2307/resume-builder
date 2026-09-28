@@ -3,7 +3,7 @@
 Paste a job description into Claude Code and get back a one-page, ATS-optimized
 LaTeX PDF tailored to it, built only from facts you've given it.
 
-**Current version: 2.3.1** · see [Changelog](#changelog)
+**Current version: 2.4.0** · see [Changelog](#changelog)
 
 ```
 /create-resume <paste the job description here>
@@ -399,6 +399,10 @@ Folder. Status starts as `draft`.
   without it, trimmed content is restored first, and the summary is added
   only into space that's left over. No detail is ever shortened or dropped
   to make room for a summary.
+- Internships: with under 3 years of experience they're full entries. With 3+
+  years they're included only when relevant to the target role and there's
+  room. Priority when fitting: full-time content, then relevant internships,
+  then the summary. Omitted internships are noted in report.md.
 - Section order: Summary → Experience → Skills → Projects → Education for 3+
   years of experience; skills and projects come first for earlier-career
   profiles.
@@ -582,6 +586,12 @@ Entry format:
 [MIT](LICENSE) © 2026 Aman Kori
 
 ## Changelog
+
+### 2.4.0 — 2026-09-28
+- Added: global internship rule (`ats-rules.md` §4). Under 3 years of
+  experience, internships are full entries. At 3+ years, they're included
+  only if relevant to the target role and there's room. Fit priority is
+  full-time content, then relevant internships, then the summary.
 
 ### 2.3.1 — 2026-09-28
 - Fixed: the fit loop could shorten or drop real content and then use the
