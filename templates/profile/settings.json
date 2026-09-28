@@ -1,0 +1,41 @@
+{
+  "profile": "template",
+  "template": "classic",
+  "formats": [
+    "pdf",
+    "docx"
+  ],
+  "dates": {
+    "tex_style": "numeric",
+    "txt_style": "short_month"
+  },
+  "documents": [
+    {
+      "id": "main",
+      "basename": "Your-Name-Resume",
+      "description": "Full resume."
+    },
+    {
+      "id": "linkedin",
+      "basename": "Your-Name-Resume-Long",
+      "description": "Public copy: no phone, extra detail."
+    }
+  ],
+  "variants": [
+    {
+      "id": "ic",
+      "label": "IC",
+      "title_overrides": {}
+    },
+    {
+      "id": "lead",
+      "label": "Lead",
+      "title_overrides": {}
+    }
+  ],
+  "_notes": {
+    "documents": "Each document is a separate content cut of the same resume.json. Tag content with \"include_in\": [\"<document id>\"] to restrict it to one.",
+    "variants": "Each variant is a role-targeted cut. Tag content with \"variants\": [\"<variant id>\"]. 'label' is appended to the filename; use \"\" for no suffix.",
+    "title_overrides": "Maps an experience item 'id' to a replacement job title, for this variant only. Never do a global find/replace on titles."
+  }
+}

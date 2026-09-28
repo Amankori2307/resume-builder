@@ -1,0 +1,14 @@
+dist/
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+.DS_Store
+
+# Personal data lives in its own private repo (resume-data/), cloned here.
+# data/ is the pre-2.0 location. Never commit either from this repo.
+resume-data/
+data/
+.vscode/

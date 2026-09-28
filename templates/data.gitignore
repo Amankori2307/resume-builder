@@ -1,0 +1,11 @@
+# resume-data: personal resume data, synced by the create-resume skill.
+# Build scratch is regenerated on every build, so it isn't worth versioning.
+.build/
+dist/
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+.DS_Store

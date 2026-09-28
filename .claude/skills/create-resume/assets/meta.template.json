@@ -1,0 +1,172 @@
+{
+  "_readme": "Everything the resume builder is allowed to say about you. Nothing outside this file (and meta/inbox/) is ever used, and nothing in it is ever embellished. Keys starting with _ are hints: delete them or leave them, they are ignored. Anything that doesn't fit a field goes in 'facts' as a question and answer.",
+  "version": 1,
+  "last_updated": "",
+  "stale_snoozed_until": null,
+  "last_deep_dive": null,
+  "_hints": {
+    "experience": "One entry per employer, most recent first; copy _example_experience. Dates are YYYY-MM or 'present'. title_history = earlier titles at the same company. In achievements, put numbers in 'metrics' only if they are real. Anything under 'private' (why joined / why left) is never put on a resume; it's for interview prep.",
+    "skills": "Only things you would be comfortable being interviewed on.",
+    "facts": "Free-form Q&A for anything that doesn't fit elsewhere: awards, gaps, visa status, side work, mentoring, context behind a role. Answers to JD gap questions land here too.",
+    "declined": "Keywords you said you do NOT have: {term, date}. The skill won't ask about them again.",
+    "preferences": "rules: your own writing rules, applied on top of the built-in ones. region: e.g. IN, US, EU (drives photo/DOB/address conventions). max_pages: null = auto. section_order: e.g. [\"summary\",\"experience\",\"skills\",\"projects\",\"education\"]. filename_stem: e.g. Jane-Doe-Resume.",
+    "last_updated": "Set automatically (YYYY-MM-DD) whenever the skill changes this file. If it's older than preferences.stale_after_days (default 30), the skill runs a quick check-in before building a resume. stale_snoozed_until is set when you skip that check-in.",
+    "deep_dive": "Say '/create-resume deep dive' to be interviewed role by role. The more detail here (why, how, numbers, what was hard), the better every tailored resume gets. Worth repeating every few months."
+  },
+  "basics": {
+    "name": "",
+    "email": "",
+    "phone": "",
+    "location": "",
+    "links": [
+      {
+        "label": "LinkedIn",
+        "url": ""
+      },
+      {
+        "label": "GitHub",
+        "url": ""
+      }
+    ]
+  },
+  "goals": {
+    "target_roles": [],
+    "seniority": "",
+    "industries": [],
+    "locations": [],
+    "ats_keywords": []
+  },
+  "experience": [],
+  "projects": [],
+  "education": [],
+  "certifications": [],
+  "skills": {
+    "languages": [],
+    "frameworks": [],
+    "databases": [],
+    "cloud_devops": [],
+    "tools": [],
+    "practices": []
+  },
+  "facts": [],
+  "declined": [],
+  "preferences": {
+    "rules": [],
+    "region": "",
+    "include_phone": true,
+    "max_pages": null,
+    "section_order": null,
+    "filename_stem": "",
+    "stale_after_days": 30,
+    "title_overrides": {},
+    "deep_dive_every_days": 90
+  },
+  "_example_experience": {
+    "id": "acme",
+    "organization": "Acme Corp",
+    "title": "Senior Software Engineer",
+    "title_history": [
+      {
+        "title": "Software Engineer",
+        "start": "2021-01",
+        "end": "2022-06"
+      }
+    ],
+    "location": "City, Country",
+    "start": "2021-01",
+    "end": "present",
+    "employment_type": "full-time",
+    "team": "What the team did, its size, who you reported to",
+    "tech": [
+      "Node.js",
+      "PostgreSQL",
+      "AWS"
+    ],
+    "achievements": [
+      {
+        "text": "Moved nightly reporting from cron scripts to an SQS worker pool",
+        "how": "Split jobs per tenant, added idempotency keys, retried with backoff",
+        "metrics": [
+          "report latency 6h -> 20min"
+        ],
+        "tech": [
+          "SQS",
+          "Node.js"
+        ],
+        "leadership": false,
+        "why": "Nightly cron reports took 6h and often missed the 9am deadline",
+        "need": "Finance ops needed reports before the morning close",
+        "scale": "~1,200 tenants, ~40M rows per night",
+        "constraints": "No new infra budget; had to reuse SQS",
+        "ownership": {
+          "role": "led",
+          "my_part": "Design and the worker pool; a teammate built the retry dashboard",
+          "collaborators": [
+            "1 backend engineer"
+          ]
+        },
+        "outcomes": [
+          "Became the pattern for all batch jobs"
+        ],
+        "challenges": [
+          "Duplicate reports on retries, fixed with idempotency keys"
+        ],
+        "alternatives": [
+          "Step Functions: rejected on cost"
+        ],
+        "learnings": [
+          "Design for retries from day one"
+        ],
+        "start": "2022-03",
+        "end": "2022-05",
+        "status": "live",
+        "links": []
+      }
+    ],
+    "company_context": {
+      "what": "B2B invoicing SaaS",
+      "product": "Invoice automation for SMBs",
+      "stage": "Series B",
+      "size": "~200 people",
+      "domain": "FinTech"
+    },
+    "reporting_to": "Engineering Manager, Payments",
+    "partners": [
+      "Product",
+      "Finance ops"
+    ],
+    "recognition": [
+      "Promoted to Senior in 18 months",
+      "'Most reliable on-call' shout-out, 2022"
+    ],
+    "private": {
+      "why_joined": "Wanted to own backend systems end to end",
+      "why_left": "Team was restructured; looking for larger scale"
+    }
+  },
+  "_example_project": {
+    "name": "",
+    "url": "",
+    "description": "",
+    "tech": [],
+    "achievements": []
+  },
+  "_example_education": {
+    "institution": "",
+    "degree": "",
+    "field": "",
+    "location": "",
+    "start": "",
+    "end": "",
+    "notes": []
+  },
+  "_example_fact": {
+    "q": "Did you win any awards or hackathons?",
+    "a": "Top 8 of 120 teams at <hackathon>, 2019",
+    "tags": [
+      "awards"
+    ],
+    "source": "user",
+    "added": "2026-01-01"
+  }
+}

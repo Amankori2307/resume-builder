@@ -1,0 +1,94 @@
+{
+  "basics": {
+    "name": "Your Name",
+    "contact": [
+      {
+        "text": "City, Country"
+      },
+      {
+        "text": "+00 0000000000",
+        "include_in": [
+          "main"
+        ]
+      },
+      {
+        "text": "you@example.com",
+        "href": "mailto:you@example.com"
+      }
+    ],
+    "links": [
+      {
+        "label": "LinkedIn",
+        "text": "linkedin.com/in/you",
+        "href": "https://www.linkedin.com/in/you/"
+      },
+      {
+        "label": "GitHub",
+        "text": "github.com/you",
+        "href": "https://github.com/you"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "type": "experience",
+      "title": "Experience",
+      "items": [
+        {
+          "id": "current-job",
+          "organization": "Company Name",
+          "title": "Your Title",
+          "location": "City, Country",
+          "start": "2024-01",
+          "end": "present",
+          "bullets": [
+            {
+              "text": "What you built, the scale it ran at, and the measurable result. Wrap numbers in **double asterisks** to bold them in the PDF."
+            },
+            {
+              "text": "A bullet only the long version should carry.",
+              "include_in": [
+                "linkedin"
+              ]
+            },
+            {
+              "text": "A bullet only the lead-targeted variant should carry.",
+              "variants": [
+                "lead"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "skills",
+      "title": "Technical Skills",
+      "items": [
+        {
+          "label": "Languages",
+          "value": "..."
+        },
+        {
+          "label": "Cloud & DevOps",
+          "value": "..."
+        }
+      ]
+    },
+    {
+      "type": "education",
+      "title": "Education",
+      "text_date_precision": "year",
+      "items": [
+        {
+          "id": "degree",
+          "organization": "Institution",
+          "title": "Degree",
+          "location": "City, Country",
+          "start": "2016-08",
+          "end": "2020-07"
+        }
+      ]
+    }
+  ]
+}

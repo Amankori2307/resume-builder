@@ -1,0 +1,80 @@
+% Resume template: classic
+% Rendered by lib/render.py. The two placeholder tokens below (the ones in
+% double braces) are replaced with content built from the profile's
+% resume.json. Copy this file to make your own style, then select it with
+% "template": "<name>" in settings.json.
+\documentclass[11pt,a4paper]{article}
+
+% Packages
+% Kept deliberately small for ATS parsing: single column, no tables, icons or
+% graphics. cmap + glyphtounicode + T1 give the PDF a real text layer, so
+% copy-paste and parsers see "fi" and "--" rather than broken glyphs.
+\usepackage{cmap}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\input{glyphtounicode}
+\pdfgentounicode=1
+% Emit real space characters in the text layer. Without this, parsers guess
+% word breaks from glyph gaps and glue words together next to hyperlinks.
+\pdfinterwordspaceon
+
+% Margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-0.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-4pt}\bfseries\raggedright\large
+}{}{0em}{}\vspace{-5pt}
+
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \textbf{#1} \hfill #2 \\
+    \textit{#3} \hfill \textit{#4}
+    \vspace{-7pt}
+}
+
+\newcommand{\resumeSummary}[1]{
+  \small{#1}\vspace{-2pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+% Text-mode bullets extract as U+2022; math-mode $\bullet$ extracts as U+2219
+% and loses the space after hyperlinks.
+\renewcommand\labelitemi{\textbullet}
+\renewcommand\labelitemii{\textbullet}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+{{HEADER}}
+
+{{SECTIONS}}
+
+\end{document}
