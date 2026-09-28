@@ -3,7 +3,7 @@
 Paste a job description into Claude Code and get back a one-page, ATS-optimized
 LaTeX PDF tailored to it, built only from facts you've given it.
 
-**Current version: 2.3.0** · see [Changelog](#changelog)
+**Current version: 2.3.1** · see [Changelog](#changelog)
 
 ```
 /create-resume <paste the job description here>
@@ -202,8 +202,10 @@ For `/create-resume <JD>`:
 6. **Build:** `./build.sh --app` renders LaTeX, runs pdflatex, and reports
    the page count.
 7. **Fit loop:** over the page limit, the summary goes first, then the
-   lowest-relevance bullets from the oldest roles. Under the limit with room
-   to spare, a summary is added. At most 6 iterations.
+   lowest-relevance content from the oldest roles is trimmed. Once it fits,
+   trimmed content is restored, most relevant first. The summary is added
+   last, only if it fits without changing anything else; otherwise the
+   resume ships without one. At most 8 iterations.
 8. **Coverage:** `lib/coverage.py` checks the text an ATS will actually
    parse. If a backed must-have is missing from it, that's treated as a
    composition bug and fixed before continuing.
@@ -392,8 +394,11 @@ Folder. Status starts as `draft`.
   bullet that shows them being used. Five or more uses gets flagged as
   possible stuffing.
 - The target role title appears verbatim once, in the summary.
-- Page limit: 1 page under 7 years of experience, otherwise 2. The summary is
-  dropped before any bullet.
+- Page limit: 1 page under 7 years of experience, otherwise 2. The summary
+  is optional and always the lowest priority. Content is trimmed to fit
+  without it, trimmed content is restored first, and the summary is added
+  only into space that's left over. No detail is ever shortened or dropped
+  to make room for a summary.
 - Section order: Summary → Experience → Skills → Projects → Education for 3+
   years of experience; skills and projects come first for earlier-career
   profiles.
@@ -577,6 +582,12 @@ Entry format:
 [MIT](LICENSE) © 2026 Aman Kori
 
 ## Changelog
+
+### 2.3.1 — 2026-09-28
+- Fixed: the fit loop could shorten or drop real content and then use the
+  freed space for a summary. The summary is now the lowest-priority content:
+  trim without it, restore trims first, add the summary only if it fits
+  without changing anything else (global rule, `ats-rules.md` §5).
 
 ### 2.3.0 — 2026-09-28
 - Added: job-posting **URL** input. It strips tracking parameters, fetches

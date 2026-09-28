@@ -100,8 +100,10 @@ Default section order:
 strongest must-have matches with evidence + one distinctive thing. No
 adjectives about personality.
 
-The summary is **optional** and space-driven (see §5). If it doesn't fit, it
-goes first.
+The summary is **optional** and has the **lowest priority of anything on the
+page** (see §5, the Summary rule). It only gets space that is left over once
+every piece of real content is at full length. It never displaces, shortens
+or removes a bullet, a skill, a project or a role.
 
 ### Bullets
 
@@ -119,13 +121,28 @@ Page limit (unless `preferences.max_pages` is set):
 
 After each build, read `pages:` from `./build.sh --app`.
 
-1. **Over the limit:** remove the summary first. Still over: remove the
-   lowest-relevance bullet from the oldest role, rebuild, repeat. Never remove
-   the only evidence for a must-have keyword; shorten a bullet instead.
-2. **Under the limit, no summary:** add the summary and rebuild. If that
-   overflows, revert.
-3. Spill of a few lines onto the next page is the worst outcome — trim to fit.
-4. Stop after 6 iterations and report what was trimmed.
+**The Summary rule (global, never overridden): content always beats the
+summary.** Never shorten, merge or remove any detail to make room for a
+summary. If the only way to include a summary is to cut content, omit the
+summary.
+
+The loop runs in this order:
+
+1. **Remove the summary** if the build is over the limit.
+2. **Trim to fit without the summary.** Remove or shorten the
+   lowest-relevance content (oldest roles first), rebuilding after each
+   change. Never remove the only evidence for a must-have keyword; shorten
+   that bullet instead. Record every trim, with its original text.
+3. **Restore trimmed content** once it fits. Put each trimmed item back at
+   full length, most relevant first, keeping each one that still fits. Only
+   the trims that truly can't fit stay out.
+4. **Add the summary last**, and only if it fits alongside everything from
+   step 3 without changing any of it. If it overflows, remove it again and
+   ship without a summary.
+5. A spill of a few lines onto the next page is the worst outcome, so trim
+   to fit (steps 2–3).
+6. Stop after 8 iterations. In report.md, list every trim that stayed out,
+   and state whether the summary was included and why.
 
 ## 6. Regional conventions (`preferences.region`)
 

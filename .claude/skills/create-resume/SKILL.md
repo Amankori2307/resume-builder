@@ -1,6 +1,6 @@
 ---
 name: create-resume
-version: 2.3.0
+version: 2.3.1
 description: Build an ATS-optimized resume PDF (LaTeX) from the user's own career facts, tailored to a pasted job description or, with no JD, to their stated career goals. Also onboards new users and adds or updates their career facts (meta). Never fabricates; asks before using any claim not in meta. Use for "/create-resume", "create/build/tailor my resume", "resume for this JD", "add this to my resume/meta", "I also worked on…", or when the user pastes a job description and wants a resume.
 ---
 
@@ -175,7 +175,10 @@ asked.
 6. **Build:** `./build.sh --app <dir>`. On a LaTeX error, fix the content
    (usually a stray character) and rebuild.
 7. **Fit loop:** follow `ats-rules.md` §5 until the page count is within the
-   limit.
+   limit. **Content always beats the summary:** trim without it, restore
+   trimmed content first, and add the summary last, only if it fits without
+   changing anything else. Never shorten or drop a detail to make room for a
+   summary.
 8. **Coverage:** `python3 lib/coverage.py <dir>`. If a *backed* must-have
    shows MISSING, or "JD spelling missing", fix the composition and go back to
    step 6. That's a composition bug, not a gap.
@@ -238,6 +241,8 @@ variants such as a LinkedIn copy. See `reference/schema.md`.
 
 - [ ] Every claim traces to meta.json; nothing invented, no title changed.
 - [ ] Within the page limit; no spill onto a partial page.
+- [ ] No content was shortened or dropped to fit the summary; every trim that
+      stayed out is listed in report.md.
 - [ ] Must-have coverage checked; each backed must-have is present.
 - [ ] Repeated-word check from `writing-rules.md` done; no verb starts more than 2 bullets.
 - [ ] The user's `preferences.rules` applied.
